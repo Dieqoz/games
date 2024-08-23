@@ -1,0 +1,121 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.word-count-selector {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.sentence-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.word-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  min-height: 60px;
+  padding: 15px;
+  border: 3px dashed #ffcc00;
+  border-radius: 10px;
+  background-color: #fffbe7;
+  transition: background-color 0.3s ease;
+}
+
+.word-container.cdk-drop-list-dragging {
+  background-color: #fff0a3;
+}
+
+.word-item {
+  padding: 10px 15px;
+  margin: 10px;
+  background-color: #ffcc00;
+  color: #333;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: move;
+  transition: transform 0.2s ease;
+  font-size: 18px;
+}
+
+.word-item.cdk-drag-preview {
+  transform: rotate(5deg);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.word-item.cdk-drag-placeholder {
+  opacity: 0.5;
+}
+
+.word-item.cdk-drag-animating {
+  transition: transform 0.2s ease;
+}
+
+button {
+  margin-top: 30px;
+  padding: 15px 25px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+p {
+  margin-top: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  color: #333;
+}
+
+.alert {
+  padding: 20px;
+  width: 90%;
+  font-size: 22px;
+  height: auto;
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
+  background-color: #dff0d8;
+  color: #3c763d;
+  border-radius: 10px;
+}
+
+.incorrecto {
+  color: red;
+  font-size: 24px;
+}
+
+.sigue-intentando {
+  font-size: 24px;
+}
+
+.change-sentence-button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.change-sentence-button:hover {
+  background-color: #0056b3;
+}

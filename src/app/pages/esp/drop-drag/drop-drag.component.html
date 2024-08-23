@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="sentence-container">
+    <!-- Contenedor de palabras desordenadas -->
+    <div
+      class="word-container"
+      cdkDropList
+      cdkDropListOrientation="horizontal"
+      id="scrambledWordsList"
+      [cdkDropListData]="scrambledWords"
+      (cdkDropListDropped)="drop($event)"
+      [cdkDropListConnectedTo]="['userSentenceList']"
+    >
+      <div class="word-item" *ngFor="let word of scrambledWords" cdkDrag>{{ word }}</div>
+    </div>
+  </div>
+
+
+  
+  <!-- Alerta para respuesta correcta -->
+  <div *ngIf="showAlert" class="alert alert-success" role="alert">
+    ¡Correcto! <br> Cargando nueva frase...
+  </div>
+
+  <!-- Mensaje de correcto/incorrecto -->
+  <p class="sigue-intentando" *ngIf="isCorrect === false">
+    <span class="incorrecto">¡Incorrecto!</span> Sigue intentando.
+  </p>
+  <button (click)="checkSentence()">Revisar oración</button>
+  <button (click)="getRandomSentence()" class="change-sentence-button">Cambiar Oración</button>
+</div>

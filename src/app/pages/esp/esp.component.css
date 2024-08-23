@@ -1,0 +1,30 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  .card-img-top {
+    height: 180px; /* Ajusta la altura deseada de la imagen */
+    object-fit: cover; /* Asegura que la imagen se ajuste adecuadamente */
+  }
+  
+  .card-body {
+    flex: 1; /* Permite que el contenido del cuerpo de la tarjeta ocupe el espacio restante */
+  }
+  
+  .content{
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    font-size: 16px;
+    text-align: center;
+    height: auto;
+  }
+
+  .bienvenido{
+   font-size: 30px;
+
+  }

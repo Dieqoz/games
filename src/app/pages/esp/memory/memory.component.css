@@ -1,0 +1,88 @@
+.container {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .control-buttons {
+    margin-bottom: 20px;
+  }
+  
+  .control-buttons button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 150px); /* 4 columnas de 150px cada una */
+    gap: 10px; /* Sin espacio entre tarjetas */
+    justify-content: center;
+    margin: 20px auto;
+
+  }
+  
+  .card {
+    width: 140px;
+    height: 140px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+  }
+  
+  .card-back {
+    width: 100%;
+    height: 100%;
+    background-color: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #333;
+    transition: transform 0.3s;
+  }
+  
+  .card.flipped img {
+    transform: rotateY(0deg);
+  }
+  
+  .card.flipped .card-back {
+    display: none;
+  }
+  
+  .card img,
+  .card .card-back {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .card {
+    perspective: 1000px;
+  }
+  
+  .card img,
+  .card .card-back {
+    transform-style: preserve-3d;
+  }
+  
+
+  .temporizador{
+    color: red;
+  }
+
+  .message-container{
+    font-size: 20px;
+    height: 40px;
+  }

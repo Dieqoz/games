@@ -1,0 +1,22 @@
+<div class="math-game-container">
+    <h2>Juego de Matemáticas</h2>
+    <label for="operation-select">Selecciona una operación:</label>
+    <select id="operation-select" [(ngModel)]="operation" (change)="generateQuestion()">
+      <option value="addition">Suma</option>
+      <option value="subtraction">Resta</option>
+      <option value="multiplication">Multiplicación</option>
+      <option value="division">División</option>
+      <option value="all">Todas</option>
+    </select>
+  
+    <div class="question">
+      <p>{{ number1 }} {{ getSymbol(operation) }} {{ number2 }} = ?</p>
+      <input type="number" [(ngModel)]="userAnswer" placeholder="Tu respuesta" />
+      <button (click)="checkAnswer()">Revisar</button>
+    </div>
+  
+    <p *ngIf="feedback" class="feedback">{{ feedback }}</p>
+    <p class="score">Puntuación: {{ score }}</p>
+    <p class="timer">Tiempo restante: {{ timeLeft }} segundos</p>
+  </div>
+  

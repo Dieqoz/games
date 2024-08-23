@@ -1,0 +1,36 @@
+<div class="container">
+  
+   
+  
+    <!-- Campo de entrada para la categoría -->
+    <div class="input-group mb-3">
+      <span class="input-group-text">Categoría</span>
+      <input type="text" class="form-control" [(ngModel)]="category" placeholder="Ingresa una categoría">
+      <button type="button" class="btn btn-primary" (click)="startGame()" [disabled]="gameStarted && remainingTime > 0">Iniciar Juego</button>
+    </div>
+      <!-- Temporizador -->
+      <div *ngIf="gameStarted">
+        <h2 *ngIf="showImages">Tiempo restante para memorizar: <span class="temporizador">{{ countdown }} segundos</span>!</h2>
+      </div>
+    
+  
+     <!-- Mensaje -->
+     <div class="message-container">
+      <div *ngIf="message">
+        <p>{{ message }}</p>
+      </div>
+    </div>
+    <!-- Contenedor del juego -->
+    <div class="game-board">
+      <div class="card" *ngFor="let card of cards"
+           (click)="flipCard(card)"
+           [ngClass]="{'disabled': remainingTime > 0}">
+        <img *ngIf="card.flipped || matchedCards.includes(card) || showImages" [src]="card.image" alt="Card Image">
+        <div *ngIf="!card.flipped && !card.matched && !showImages" class="card-back"></div>
+      </div>
+    </div>
+    
+    <!-- Botón para reiniciar el juego -->
+    <button type="button" class="btn btn-danger" *ngIf="gameStarted" (click)="resetGame()">Jugar con otra categroría</button>
+  </div>
+  
